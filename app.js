@@ -4,7 +4,7 @@ import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-d
 dotenv.config()
 
 // Function executed through Lambda
-function Telegram()
+export default function Telegram()
 {
   const token = process.env.TELEGRAM_TOKEN
 
