@@ -10,21 +10,8 @@ export function Telegram()
 {
   const token = process.env.TELEGRAM_TOKEN
 
-  const options = {
-    webHook: {
-      key: path.resolve('./localhost.key'),
-      cert: path.resolve('./localhost.crt')
-    }
-  }
-
   // Create a bot that uses 'polling' to fetch new updates
-  const bot = new TelegramBot(token, options);
-
-  // Setup webhook
-  bot.setWebHook(`${process.env.APP_URL}/bot/${token}`, {
-    certificate: options.webHook.cert
-  })
-
+  const bot = new TelegramBot(token, { polling: true });
 
   // Matches "/echo [whatever]"
   bot.onText(/\/echo (.+)/, (msg, match) => {
