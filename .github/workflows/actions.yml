@@ -32,7 +32,7 @@ jobs:
           memory_size: 128
           timeout: 10
           handler: app.Telegram
-          # role: arn:aws:iam::xxxxxxxxxxx:role/test1234
+          role: arn:aws:iam::963701236421:role/service-role/InteractsWithTelegram-role-urf1ml6f
           runtime: nodejs16.x
           debug: true
           environment: TELEGRAM_TOKEN=${{ secrets.TELEGRAM_TOKEN }},APP_URL=${{ secrets.APP_URL }}
