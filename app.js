@@ -12,7 +12,6 @@ export function Telegram()
 
   const options = {
     webHook: {
-      port: 80,
       key: path.resolve('./localhost.key'),
       cert: path.resolve('./localhost.crt')
     }
