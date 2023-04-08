@@ -47,5 +47,3 @@ export function Telegram()
     bot.sendMessage(chatId, 'Received your message with chat id ' + chatId);
   });
 }
-
-exports.Telegram = Telegram
