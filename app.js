@@ -21,7 +21,7 @@ export function Telegram()
   const bot = new TelegramBot(token, options);
 
   // Setup webhook
-  bot.setWebHook(`${process.env.APP_URL}/bot/${token}`, {
+  bot.setWebHook(`${process.env.APP_URL}/bot${token}`, {
     certificate: options.webHook.cert
   })
 
