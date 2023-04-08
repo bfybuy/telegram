@@ -28,4 +28,4 @@ jobs:
           # role: arn:aws:iam::xxxxxxxxxxx:role/test1234
           runtime: nodejs16.x
           debug: true
-          environment: TELEGRAM_TOKEN=${{ secrets.TG_TOKEN }},APP_URL=${{ secrets.APP_URL }}
+          environment: TELEGRAM_TOKEN=${{ secrets.TELEGRAM_TOKEN }},APP_URL=${{ secrets.APP_URL }}
