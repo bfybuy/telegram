@@ -11,6 +11,13 @@ jobs:
     steps:
       - name: checkout source code
         uses: actions/checkout@v3
+      - name: npm install
+        run: |
+          npm install
+      - uses: actions/upload-artifact@v2
+        with:
+          name: npm artifacts
+          path: node_modules/
       - name: Zip code
         run: |
           zip -r deployment.zip .
