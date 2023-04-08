@@ -12,7 +12,7 @@ jobs:
       - name: checkout source code
         uses: actions/checkout@v3
       - name: Install Go
-        uses: actions/setup-go@v1
+        uses: actions/setup-go@v3
         with:
           go-version: ${{ matrix.go-version }}
       - name: Build binary
@@ -24,10 +24,12 @@ jobs:
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: ${{ secrets.AWS_REGION }}
-          function_name: gorush
+          function_name: InteractsWithTelegram
           zip_file: telegram/deployment.zip
           memory_size: 128
           timeout: 10
           handler: foobar
-          role: arn:aws:iam::xxxxxxxxxxx:role/test1234
-          runtime: nodejs12.x
+          # role: arn:aws:iam::xxxxxxxxxxx:role/test1234
+          runtime: nodejs16.x
+          debug: true
+          environment: TELEGRAM_TOKEN=${{ secrets.TG_TOKEN }},APP_URL=${{ secrets.APP_URL }}
