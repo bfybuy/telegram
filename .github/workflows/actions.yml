@@ -17,7 +17,7 @@ jobs:
           go-version: ${{ matrix.go-version }}
       - name: Build binary
         run: |
-          cd telegram && CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -v -a -o main main.go && zip deployment.zip main
+          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -v -a -o main main.go && zip deployment.zip main
       - name: default deploy
         uses: appleboy/lambda-action@v0.1.9
         with:
@@ -28,7 +28,7 @@ jobs:
           zip_file: telegram/deployment.zip
           memory_size: 128
           timeout: 10
-          handler: foobar
+          handler: Telegram
           # role: arn:aws:iam::xxxxxxxxxxx:role/test1234
           runtime: nodejs16.x
           debug: true
