@@ -1,6 +1,8 @@
 import TelegramBot from 'node-telegram-bot-api';
 import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
 
+import path from 'path';
+
 dotenv.config()
 
 // Function executed through Lambda
@@ -11,8 +13,8 @@ export function Telegram()
   const options = {
     webHook: {
       port: 443,
-      key: './key.pem',
-      cert: './crt.pem'
+      key: path.resolve('./localhost.key'),
+      cert: path.resolve('./localhost.crt')
     }
   }
 
