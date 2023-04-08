@@ -45,6 +45,6 @@ export function Telegram()
     const chatId = msg.chat.id;
 
     // send a message to the chat acknowledging receipt of their message
-    bot.sendMessage(chatId, 'Received your message with chat id ' + chatId);
+    bot.sendMessage(chatId, 'Received your message wiith chat id ' + chatId);
   });
 }
