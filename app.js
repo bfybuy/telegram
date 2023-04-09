@@ -12,8 +12,6 @@ export function Telegram()
 
   const options = {
     webHook: {
-      key: path.resolve('./localhost.key'),
-      cert: path.resolve('./localhost.crt')
     }
   }
 
@@ -21,7 +19,7 @@ export function Telegram()
   const bot = new TelegramBot(token, options);
 
   // Setup webhook
-  bot.setWebHook(`${process.env.APP_URL}/bot${token}`, {
+  bot.setWebHook(`${process.env.APP_URL}/webhook/${token}`, {
     certificate: options.webHook.cert
   })
 
