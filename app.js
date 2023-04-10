@@ -9,9 +9,7 @@ const token = process.env.TELEGRAM_TOKEN
 
 const options = {
   webHook: {
-    port: process.env.APP_PORT,
-    key: './bfybuy.key',
-    cert: './bfybuy.crt'
+    port: process.env.APP_PORT
   }
 }
 
