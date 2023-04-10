@@ -18,7 +18,7 @@ const bot = new TelegramBot(token, options);
 
 // Setup webhook
 bot.setWebHook(`${process.env.APP_URL}/webhook/${token}`, {
-  certificate: options.webHook.cert
+  // certificate: options.webHook.cert
 })
 
 
