@@ -9,17 +9,19 @@ const token = process.env.TELEGRAM_TOKEN
 
 const options = {
   webHook: {
-    port: process.env.APP_PORT
+    port: process.env.APP_PORT,
+    cert: path.resolve('./localhost.crt'),
+    key: path.resolve('./localhost.key')
   }
 }
 
 // Create a bot that uses 'polling' to fetch new updates
-const bot = new TelegramBot(token, options);
+const bot = new TelegramBot(token, {polling: true});
 
 // Setup webhook
-bot.setWebHook(`${process.env.APP_URL}/webhook/${token}`, {
-  // certificate: options.webHook.cert
-})
+// bot.setWebHook(`${process.env.APP_URL}/bot${token}`, {
+//   certificate: options.webHook.cert
+// })
 
 
 // Matches "/echo [whatever]"
